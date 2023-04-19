@@ -1,4 +1,4 @@
-import { View } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 
 import WelcomeScreen from './screens/WelcomeScreen'
 
@@ -7,15 +7,18 @@ import LittleLemonFooter from './components/LittleLemonFooter'
 
 export default function App() {
 	return (
-		<View
-			style={{
-				flex: 1,
-				justifyContent: 'space-between',
-				backgroundColor: '#495E57',
-			}}>
+		<View style={styles.container}>
 			<LittleLemonHeader />
 			<WelcomeScreen />
 			<LittleLemonFooter />
 		</View>
 	)
 }
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		backgroundColor: '#333333',
+		justifyContent: 'space-between',
+	},
+})
