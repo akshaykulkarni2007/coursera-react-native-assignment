@@ -1,17 +1,15 @@
 import { View, StyleSheet } from 'react-native'
 
-import WelcomeScreen from './screens/WelcomeScreen'
-import LoginScreen from './screens/LoginScreen'
-
 import LittleLemonHeader from './components/LittleLemonHeader'
 import LittleLemonFooter from './components/LittleLemonFooter'
+
+import Routes from './routes'
 
 export default function App() {
 	return (
 		<View style={styles.container}>
 			<LittleLemonHeader />
-			<WelcomeScreen />
-			<LoginScreen />
+			<Routes />
 			<LittleLemonFooter />
 		</View>
 	)
