@@ -8,43 +8,36 @@ import {
 	StyleSheet,
 } from 'react-native'
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
 	const [email, onChangeEmail] = useState('')
 	const [password, onChangePassword] = useState('')
-	const [loggedIn, setIsLoggedIn] = useState(false)
 
 	return (
 		<ScrollView style={styles.container}>
 			<Text style={styles.headerText}>Welcome to Little Lemon</Text>
 
-			{loggedIn ? (
-				<Text style={styles.headerText}>Your are logged in!</Text>
-			) : (
-				<View>
-					<Text style={styles.regularText}>Login to continue </Text>
+			<Text style={styles.regularText}>Login to continue </Text>
 
-					<TextInput
-						style={styles.inputBox}
-						value={email}
-						onChangeText={onChangeEmail}
-						placeholder={'email'}
-						keyboardType={'email-address'}
-					/>
-					<TextInput
-						style={styles.inputBox}
-						value={password}
-						onChangeText={onChangePassword}
-						placeholder={'password'}
-						keyboardType={'default'}
-						secureTextEntry={true}
-					/>
-					<Pressable
-						onPress={() => setIsLoggedIn((prev) => !prev)}
-						style={styles.button}>
-						<Text style={styles.buttonText}>Log in</Text>
-					</Pressable>
-				</View>
-			)}
+			<TextInput
+				style={styles.inputBox}
+				value={email}
+				onChangeText={onChangeEmail}
+				placeholder={'email'}
+				keyboardType={'email-address'}
+			/>
+			<TextInput
+				style={styles.inputBox}
+				value={password}
+				onChangeText={onChangePassword}
+				placeholder={'password'}
+				keyboardType={'default'}
+				secureTextEntry={true}
+			/>
+			<Pressable
+				onPress={() => navigation.navigate('Welcome')}
+				style={styles.button}>
+				<Text style={styles.buttonText}>Log in</Text>
+			</Pressable>
 		</ScrollView>
 	)
 }
