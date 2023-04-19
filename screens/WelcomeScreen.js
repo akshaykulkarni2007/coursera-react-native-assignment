@@ -1,5 +1,12 @@
 import { useState } from 'react'
-import { Text, View, ScrollView, TextInput, StyleSheet } from 'react-native'
+import {
+	Text,
+	View,
+	ScrollView,
+	TextInput,
+	Image,
+	StyleSheet,
+} from 'react-native'
 
 // import MenuItems from '../components/MenuItems'
 // import MenuItemSectionList from '../components/MenuItemSectionList'
@@ -11,17 +18,26 @@ export default function WelcomeScreen() {
 	return (
 		<ScrollView indicatorStyle="white" style={styles.container}>
 			{/* Welcome text */}
-			{/* <View>
+			<View style={styles.headerWrapper}>
+				<Image
+					style={styles.image}
+					source={require('../img/logo.png')}
+					resizeMode="cover"
+					accessible={true}
+					accessibilityLabel={'Little Lemon Logo'}
+				/>
+
 				<Text style={styles.title}>Welcome to Little Lemon</Text>
-				<Text style={styles.description}>
-					Little Lemon is a charming neighborhood bistro that serves simple food
-					and classic cocktails in a lively but casual environment. We would
-					love to hear more about your experience with us!
-				</Text>
-			</View> */}
+			</View>
+
+			<Text style={styles.description}>
+				Little Lemon is a charming neighborhood bistro that serves simple food
+				and classic cocktails in a lively but casual environment. We would love
+				to hear more about your experience with us!
+			</Text>
 
 			{/* Login */}
-			<LoginScreen />
+			{/* <LoginScreen /> */}
 
 			{/* Lists */}
 			{/* <MenuItems />
@@ -33,6 +49,16 @@ export default function WelcomeScreen() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
+	},
+	headerWrapper: {
+		flexDirection: 'row',
+		justifyContent: 'center',
+		margin: 10,
+	},
+	image: {
+		width: 100,
+		height: 100,
+		borderRadius: 20,
 	},
 	title: {
 		padding: 40,
