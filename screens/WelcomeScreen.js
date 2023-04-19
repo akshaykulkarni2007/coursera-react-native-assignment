@@ -1,9 +1,12 @@
-import { Text, View, ScrollView, StyleSheet } from 'react-native'
+import { useState } from 'react'
+import { Text, View, ScrollView, TextInput, StyleSheet } from 'react-native'
 
-import MenuItems from '../components/MenuItems'
-import MenuItemSectionList from '../components/MenuItemSectionList'
+// import MenuItems from '../components/MenuItems'
+// import MenuItemSectionList from '../components/MenuItemSectionList'
 
 export default function WelcomeScreen() {
+	const [firstName, onChangeFirstName] = useState('')
+
 	return (
 		<ScrollView indicatorStyle="white" style={styles.container}>
 			{/* Welcome text */}
@@ -17,6 +20,12 @@ export default function WelcomeScreen() {
 			</View>
 
 			{/* Form*/}
+			<TextInput
+				style={styles.inputBox}
+				value={firstName}
+				onChangeText={onChangeFirstName}
+				placeholder={'First Name'}
+			/>
 
 			{/* Lists */}
 			{/* <MenuItems />
@@ -41,5 +50,16 @@ const styles = StyleSheet.create({
 		marginVertical: 8,
 		color: '#EDEFEE',
 		textAlign: 'center',
+	},
+	inputBox: {
+		height: 40,
+		maxWidth: '90%',
+		marginHorizontal: '5%',
+		marginVertical: 12,
+		borderWidth: 1,
+		padding: 10,
+		fontSize: 16,
+		borderColor: '#EDEFEE',
+		backgroundColor: '#EDEFEE',
 	},
 })
