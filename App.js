@@ -5,6 +5,7 @@ import { View, StyleSheet } from 'react-native'
 
 // Week 2
 import MenuItems from './components/MenuItems'
+import MenuItemSectionList from './components/MenuItemSectionList'
 
 import LittleLemonHeader from './components/LittleLemonHeader'
 import LittleLemonFooter from './components/LittleLemonFooter'
@@ -14,7 +15,8 @@ export default function App() {
 		<View style={styles.container}>
 			<LittleLemonHeader />
 			{/* <WelcomeScreen /> */}
-			<MenuItems />
+			{/* <MenuItems /> */}
+			<MenuItemSectionList />
 			<LittleLemonFooter />
 		</View>
 	)
