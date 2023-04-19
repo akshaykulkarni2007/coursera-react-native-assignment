@@ -1,9 +1,7 @@
-import { useState } from 'react'
 import {
 	Text,
 	View,
 	ScrollView,
-	TextInput,
 	Image,
 	StyleSheet,
 	useColorScheme,
@@ -11,10 +9,8 @@ import {
 
 // import MenuItems from '../components/MenuItems'
 // import MenuItemSectionList from '../components/MenuItemSectionList'
-// import LoginScreen from '../components/LoginScreen'
 
 export default function WelcomeScreen() {
-	// const [firstName, onChangeFirstName] = useState('')
 	const colorScheme = useColorScheme()
 
 	return (
@@ -26,7 +22,6 @@ export default function WelcomeScreen() {
 					? { backgroundColor: '#fff' }
 					: { backgroundColor: '#333333' },
 			]}>
-			{/* Welcome text */}
 			<View style={styles.headerWrapper}>
 				<Image
 					style={styles.image}
@@ -56,9 +51,6 @@ export default function WelcomeScreen() {
 				and classic cocktails in a lively but casual environment. We would love
 				to hear more about your experience with us!
 			</Text>
-
-			{/* Login */}
-			{/* <LoginScreen /> */}
 
 			{/* Lists */}
 			{/* <MenuItems />
