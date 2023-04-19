@@ -6,17 +6,26 @@ import {
 	TextInput,
 	Image,
 	StyleSheet,
+	useColorScheme,
 } from 'react-native'
 
 // import MenuItems from '../components/MenuItems'
 // import MenuItemSectionList from '../components/MenuItemSectionList'
-import LoginScreen from '../components/LoginScreen'
+// import LoginScreen from '../components/LoginScreen'
 
 export default function WelcomeScreen() {
-	const [firstName, onChangeFirstName] = useState('')
+	// const [firstName, onChangeFirstName] = useState('')
+	const colorScheme = useColorScheme()
 
 	return (
-		<ScrollView indicatorStyle="white" style={styles.container}>
+		<ScrollView
+			indicatorStyle="white"
+			style={[
+				styles.container,
+				colorScheme === 'light'
+					? { backgroundColor: '#fff' }
+					: { backgroundColor: '#333333' },
+			]}>
 			{/* Welcome text */}
 			<View style={styles.headerWrapper}>
 				<Image
@@ -27,10 +36,22 @@ export default function WelcomeScreen() {
 					accessibilityLabel={'Little Lemon Logo'}
 				/>
 
-				<Text style={styles.title}>Welcome to Little Lemon</Text>
+				<Text
+					style={[
+						styles.title,
+						colorScheme === 'light'
+							? { color: '#333333' }
+							: { color: '#EDEFEE' },
+					]}>
+					Welcome to Little Lemon
+				</Text>
 			</View>
 
-			<Text style={styles.description}>
+			<Text
+				style={[
+					styles.description,
+					colorScheme === 'light' ? { color: '#333333' } : { color: '#EDEFEE' },
+				]}>
 				Little Lemon is a charming neighborhood bistro that serves simple food
 				and classic cocktails in a lively but casual environment. We would love
 				to hear more about your experience with us!
