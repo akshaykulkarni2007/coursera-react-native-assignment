@@ -11,14 +11,14 @@ export default function WelcomeScreen() {
 	return (
 		<ScrollView indicatorStyle="white" style={styles.container}>
 			{/* Welcome text */}
-			<View>
+			{/* <View>
 				<Text style={styles.title}>Welcome to Little Lemon</Text>
 				<Text style={styles.description}>
 					Little Lemon is a charming neighborhood bistro that serves simple food
 					and classic cocktails in a lively but casual environment. We would
 					love to hear more about your experience with us!
 				</Text>
-			</View>
+			</View> */}
 
 			{/* Login */}
 			<LoginScreen />
@@ -46,16 +46,5 @@ const styles = StyleSheet.create({
 		marginVertical: 8,
 		color: '#EDEFEE',
 		textAlign: 'center',
-	},
-	inputBox: {
-		height: 40,
-		maxWidth: '90%',
-		marginHorizontal: '5%',
-		marginVertical: 12,
-		borderWidth: 1,
-		padding: 10,
-		fontSize: 16,
-		borderColor: '#EDEFEE',
-		backgroundColor: '#EDEFEE',
 	},
 })
