@@ -3,6 +3,7 @@ import { Text, View, ScrollView, TextInput, StyleSheet } from 'react-native'
 
 // import MenuItems from '../components/MenuItems'
 // import MenuItemSectionList from '../components/MenuItemSectionList'
+import LoginScreen from '../components/LoginScreen'
 
 export default function WelcomeScreen() {
 	const [firstName, onChangeFirstName] = useState('')
@@ -19,13 +20,8 @@ export default function WelcomeScreen() {
 				</Text>
 			</View>
 
-			{/* Form*/}
-			<TextInput
-				style={styles.inputBox}
-				value={firstName}
-				onChangeText={onChangeFirstName}
-				placeholder={'First Name'}
-			/>
+			{/* Login */}
+			<LoginScreen />
 
 			{/* Lists */}
 			{/* <MenuItems />
